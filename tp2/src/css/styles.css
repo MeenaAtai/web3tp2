@@ -1,3 +1,87 @@
+/* PAGE */
 body {
+    margin: 0;
+    height: 100vh;
     background-color: rgb(4, 4, 58);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-family: Arial, sans-serif;
+}
+
+/* ====== GRILLE DU HEADER ====== */
+header {
+    display: grid;
+    grid-template-areas:
+        "animL animM animR"
+        "info  info  info";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 120px;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Zones nommées */
+.anim-left   { grid-area: animL; }
+.anim-mid    { grid-area: animM; }
+.anim-right  { grid-area: animR; }
+.info-bar    { grid-area: info; }
+
+/* Bordures différentes */
+.anim-left  { border: 3px solid #00b4ff; }
+.anim-mid   { border: 3px solid #00e0a5; }
+.anim-right { border: 3px solid #ffbb00; }
+.info-bar   { border: 3px solid #ff4d6d; }
+
+.zone {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(2px);
+}
+
+/* ====== ZONE CENTRALE ====== */
+main {
+    display: grid;
+    grid-template-areas:
+        "vfxL center vfxR";
+    grid-template-columns: 250px 1fr 250px;
+    gap: 10px;
+    padding: 10px;
+}
+
+.vfx-left  { grid-area: vfxL;  border: 3px solid #6d5dff; }
+.vfx-right { grid-area: vfxR;  border: 3px solid #ff6ee0; }
+
+.center-zone {
+    grid-area: center;
+    border: 3px solid #00ffee;
+    position: relative;
+    background: rgba(255,255,255,0.03);
+}
+
+.zdog-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ====== BAS : GRAPHIQUES ====== */
+footer {
+    display: grid;
+    grid-template-areas: "graphA graphB";
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
+.graph-a { grid-area: graphA; border: 3px solid #48ff00; }
+.graph-b { grid-area: graphB; border: 3px solid #ff2f00; }
+
+.chart-container {
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+}
+
+canvas {
+    width: 100%;
+    height: 150px;
 }
