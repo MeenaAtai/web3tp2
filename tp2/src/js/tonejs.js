@@ -3,16 +3,16 @@ import { ToneVisualizer } from "tone-visualizer";
 
 // AUDIO + VISUALIZER
 const player = new Tone.Player(
-    "nebula-digital-futuristic-sci-fi-music-217626.mp3"
+    "https://www.youtube.com/watch?v=S2kymv60ndQ"
 ).toDestination();
 
-document.querySelector("button").addEventListener("click", async () => {
+document.querySelector("#playBtn").addEventListener("click", async () => {
 
     await Tone.start();
     await Tone.loaded();
 
     // Visualize inside overlay container
-    new ToneVisualizer(".visualizer-container", player, {
+    new ToneVisualizer(".visualizer", player, {
         Tone,
         type: "oscilloscope",
         strokeColor: [0, 0, 0, 255],
