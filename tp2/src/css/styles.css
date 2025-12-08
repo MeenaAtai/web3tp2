@@ -20,6 +20,7 @@ header {
     padding: 10px;
 }
 
+
 /* Zones nommées */
 .anim-left   { grid-area: animL; }
 .anim-mid    { grid-area: animM; }

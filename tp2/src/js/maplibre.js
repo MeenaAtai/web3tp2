@@ -4,7 +4,7 @@ const carte = new maplibregl.Map({
     container: "carte",
     style: "https://api.maptiler.com/maps/toner-v2/style.json?key=UhNcSIyvAfScAdeJGjFQ",
     center: [0, 0],
-    zoom: 1,
+    zoom: -0.5,
     bearing: 0,
     pitch: 0,
     attributionControl : false
