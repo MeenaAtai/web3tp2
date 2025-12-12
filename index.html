@@ -12,6 +12,7 @@
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/p5@2.1.1/lib/p5.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="http://unpkg.com/tone"></script>
     <script type="importmap">
         {
           "imports": {
@@ -40,9 +41,9 @@
         <div class="zone anim-left" id="carte"></div>
         <div class="zone anim-mid">Éléments animés</div>
         <div class="zone anim-right">
-          <button id="playBtn" class="btn btn-primary">
-            <i class="bi bi-play-circle"></i> Play
-          </button>
+            <button type="button" id="playBtn" class="btn btn-primary">
+                <i class="bi bi-play-circle"></i> Play
+            </button>
           <div class="visualizer"></div>
         </div>
         <div class="zone info-bar">Informations textuelles</div>

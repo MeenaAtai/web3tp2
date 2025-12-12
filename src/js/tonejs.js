@@ -1,9 +1,9 @@
-import * as Tone from "tone.js";
-import { ToneVisualizer } from "tone-visualizer";
+import * as Tone from "https://esm.sh/tone@15.1.22";
+import { ToneVisualizer } from "https://unpkg.com/tone-visualizer/dist/visualizer.esm.js";
 
 // AUDIO + VISUALIZER
 const player = new Tone.Player(
-    "https://www.youtube.com/watch?v=S2kymv60ndQ"
+    "nebula.mp3"
 ).toDestination();
 
 document.querySelector("#playBtn").addEventListener("click", async () => {
