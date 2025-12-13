@@ -1,4 +1,13 @@
-/* PAGE */
+@font-face {
+    font-family: "CaviarDreams";
+    src: local("CaviarDreams") url("CaviarDreams.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "BabaPro";
+    src: local("BabaPro"), url("BabaPro-Regular.ttf") format("truetype");
+}
+
 body {
     margin: 0;
     height: 100vh;
@@ -55,6 +64,8 @@ main {
     border: 3px solid #00ffee;
     position: relative;
     background: rgba(255,255,255,0.03);
+    width: 100%;
+    height: 100%;
 }
 
 .zdog-canvas {
@@ -73,8 +84,8 @@ footer {
     padding: 10px;
 }
 
-.graph-a { grid-area: graphA; border: 3px solid #48ff00; }
-.graph-b { grid-area: graphB; border: 3px solid #ff2f00; }
+.graph-a { grid-area: graphA; border: 3px solid #3c0a98; }
+.graph-b { grid-area: graphB; border: 3px solid #6f1293; }
 
 .chart-container {
     background: rgba(255,255,255,0.05);
@@ -88,11 +99,50 @@ canvas {
 
 .visualizer {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 10;
+    height: 50%; 
+    font-family: "CaviarDreams";
+    font-size: 25px;
+    color: white;
 }
 
+.anim-right {
+    position: relative;
+}
+
+#playBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 45%);
+}
+
+.vfx-left,
+.vfx-right {
+    overflow: hidden;
+}
+
+.vfx-left img,
+.vfx-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.vfx-right {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.vfx-right img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+}
+
+.zdog-canvas {
+    z-index: -1;
+}

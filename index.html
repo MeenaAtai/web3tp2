@@ -24,7 +24,9 @@
             "zzz": "https://esm.sh/zdog",
             "tone.js": "https://esm.sh/tone@15.1.22",
             "tone-visualizer": "./node_modules/tone-visualizer/dist/visualizer.esm.js",
-            "vfx-js": "https://esm.sh/@vfx-js/core"
+            "vfx-js": "https://esm.sh/@vfx-js/core",
+            "three": "./node_modules/three/build/three.module.js",
+            "three-objloader": "./node_modules/three/examples/jsm/loaders/OBJLoader.js"
           }
         }
     </script>
@@ -34,6 +36,7 @@
     <script src="./src/js/zdog.js" type="module"></script>
     <script src="./src/js/tonejs.js" type="module"></script>
     <script src="./src/js/vfx.js" type="module"></script>
+    <script src="./src/js/three.js" type="module"></script>
     <script src="./src/js/bootstrap.js" defer></script>
 </head>
 <body>
@@ -41,21 +44,25 @@
         <div class="zone anim-left" id="carte"></div>
         <div class="zone anim-mid">Éléments animés</div>
         <div class="zone anim-right">
+            <div class="visualizer">Analyse de son :</div>
             <button type="button" id="playBtn" class="btn btn-primary">
                 <i class="bi bi-play-circle"></i> Play
             </button>
-          <div class="visualizer"></div>
         </div>
         <div class="zone info-bar">Informations textuelles</div>
     </header>
     <main>
-        <div class="zone vfx-left">VFX-JS</div>
-
-        <div class="center-zone">
+        <div class="zone vfx-left">
+            <img src="./assets/img/vfx3.gif" alt="vfx3">
+        </div>
+        <div class="center-zone" id="viewer">
             <canvas class="zdog-canvas"></canvas>
         </div>
-
-        <div class="zone vfx-right">VFX-JS</div>
+        
+        <div class="zone vfx-right">
+            <img src="./assets/img/vfx1.gif" alt="vfx1">
+            <img src="./assets/img/vfx2.gif" alt="vfx2">
+        </div>
     </main>
 
     <footer>
