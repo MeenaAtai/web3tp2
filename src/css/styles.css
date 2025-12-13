@@ -24,28 +24,25 @@ header {
         "animL animM animR"
         "info  info  info";
     grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: auto; /* <- changer ici */
+    grid-auto-rows: auto; 
     gap: 10px;
     padding: 10px;
 }
 
-
-/* Zones nommées */
-.anim-left   { grid-area: animL; }
+.anim-gauche   { grid-area: animL; }
 .anim-mid    { grid-area: animM; }
-.anim-right  { grid-area: animR; }
+.anim-droite  { grid-area: animR; }
 .info-bar    { grid-area: info; }
 
-/* Bordures différentes */
-.anim-left  { border: 3px solid #00b4ff; }
+.anim-gauche  { border: 3px solid #00b4ff; }
 .anim-mid   { border: 3px solid #00e0a5; }
-.anim-right { border: 3px solid #00b4ff; }
+.anim-droite { border: 3px solid #00b4ff; }
 .info-bar   { border: 3px solid #6d5dff; }
 
 .anim-mid {
     display: flex;
-    justify-content: center; /* centre horizontalement */
-    align-items: center;     /* centre verticalement */
+    justify-content: center; 
+    align-items: center;     
     gap: 16px;               
 }
 
@@ -62,10 +59,10 @@ main {
     padding: 10px;
 }
 
-.vfx-left  { grid-area: vfxL;  border: 3px solid #631eb2; }
-.vfx-right { grid-area: vfxR;  border: 3px solid #631eb2; }
+.vfx-gauche  { grid-area: vfxL;  border: 3px solid #631eb2; }
+.vfx-droite { grid-area: vfxR;  border: 3px solid #631eb2; }
 
-.center-zone {
+.centre-zone {
     grid-area: center;
     border: 3px solid #00e0a5;;
     position: relative;
@@ -106,7 +103,6 @@ canvas {
     position: absolute;
     width: 100%;
     height: 45%; 
-    
 }
 
 p {
@@ -123,7 +119,7 @@ h1 {
     text-align: center;
 }
 
-.anim-right {
+.anim-droite {
     position: relative;
 }
 
@@ -134,25 +130,25 @@ h1 {
     transform: translate(-50%, 45%);
 }
 
-.vfx-left,
-.vfx-right {
+.vfx-gauche,
+.vfx-droite {
     overflow: hidden;
 }
 
-.vfx-left img,
-.vfx-right img {
+.vfx-gauche img,
+.vfx-droite img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
-.vfx-right {
+.vfx-droite {
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
-.vfx-right img {
+.vfx-droite img {
     width: 100%;
     height: 50%;
     object-fit: cover;
@@ -173,8 +169,8 @@ svg {
 }
 
 .table {
-    background: rgba(10, 10, 20, 0.8); /* fond très sombre */
-    border: 2px solid #00FFFF; /* néon vert */
+    background: rgba(10, 10, 20, 0.8); 
+    border: 2px solid #00FFFF; 
     border-radius: 8px;
     box-shadow: 0 0 20px #00FFFF inset;
 }

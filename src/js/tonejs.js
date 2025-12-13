@@ -13,7 +13,6 @@ document.querySelector("#playBtn").addEventListener("click", async () => {
     await Tone.start();
     await Tone.loaded();
 
-    // créer le visualizer UNE SEULE FOIS
     if (!visualizer) {
         visualizer = new ToneVisualizer(".visualizer", player.output, {
             Tone,
