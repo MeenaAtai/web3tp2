@@ -67,7 +67,7 @@ main {
 
 .center-zone {
     grid-area: center;
-    border: 3px solid #00ffee;
+    border: 3px solid #00e0a5;;
     position: relative;
     background: rgba(255,255,255,0.03);
     width: 100%;
@@ -170,4 +170,20 @@ h1 {
 
 svg {
     color: turquoise;
+}
+
+.table {
+    background: rgba(10, 10, 20, 0.8); /* fond très sombre */
+    border: 2px solid #00FFFF; /* néon vert */
+    border-radius: 8px;
+    box-shadow: 0 0 20px #00FFFF inset;
+}
+
+.table tbody tr:hover {
+    background: rgba(0, 255, 136, 0.1);
+    transform: scale(1.01);
+}
+
+th td {
+    font-family: "CaviarDreams";
 }

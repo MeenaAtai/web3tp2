@@ -54,23 +54,23 @@ let graphique = new Chart(document.getElementById("a").getContext("2d"), {
   data: {
     datasets: [
       {
-        label: "Battlefield 6",
+        label: "Température (°C)",
         data: data,
         borderWidth: 2,
-        tension: 0.4, // 0 linéaire, 0.5 smooth
+        tension: 0.5, // 0 linéaire, 0.5 smooth
         fill: true,
-        borderColor: "rgba(239, 85, 82, 1)",
-        backgroundColor: "rgba(239, 85, 82, 0.1)",
+        borderColor: "rgba(130, 55, 201, 1)",
+        backgroundColor: "rgba(86, 16, 118, 0.1)",
         pointRadius: 0
       },
       {
-        label: "ARC Raiders",
+        label: "Concentration en O₂ (ppm)",
         data: series,
         borderWidth: 2,
-        tension: 0.4, // 0 linéaire, 0.5 smooth
+        tension: 0.5, // 0 linéaire, 0.5 smooth
         fill: true,
-        borderColor: "rgba(85, 239, 85, 1)",
-        backgroundColor: "rgba(85, 239, 85, 0.1)",
+        borderColor: "rgba(19, 48, 190, 1)",
+        backgroundColor: "rgba(60, 51, 195, 0.1)",
         pointRadius: 0
       }
     ]
@@ -82,9 +82,8 @@ let graphique = new Chart(document.getElementById("a").getContext("2d"), {
     plugins: {
       title: {
         display: true,
-        text: "Joueurs simultanés (SteamDB)"
+        text: "Qualité de l'atmosphère de la planète Astra-9"
       }
-      // legend: { display: false }
     },
     scales: {
       x: {
@@ -135,7 +134,7 @@ let graphique = new Chart(document.getElementById("a").getContext("2d"), {
 
         title: {
           display: true,
-          text: "Joueurs simultanés",
+          text: "Valeurs mesurées",
           color: "#fff",
           font: {
             family: "Arial",
@@ -173,16 +172,15 @@ let graphique = new Chart(document.getElementById("a").getContext("2d"), {
 });
 
 // Animaton du graphique 1
-//
 setInterval(() => {
   for (let ds of graphique.data.datasets) {
      for (let i = 0; i < ds.data.length; i++) {
-       const currentY = parseFloat(ds.data[i].y);
-       const random = Math.round(Math.random() * 20000 - 10000);
-       ds.data[i].y = Math.max(0, currentY + random);
+      const currentY = parseFloat(ds.data[i].y);
+      const random = Math.round(Math.random() * 20000 - 10000);
+      ds.data[i].y = Math.max(0, currentY + random);
     }
-   }
-   graphique.update();
+  }
+  graphique.update();
 }, 100);
 
 
@@ -191,17 +189,17 @@ setInterval(() => {
 let graphique1 = new Chart(document.getElementById("b"), {
   type: "polarArea",
   data: {
-    labels: ["16–24", "25–34", "35–44", "45–54", "55–64", "65+"],
+    labels: ["16e-24e", "25e-34e", "35e-44e", "45e-54e", "55e-64e", "65e+"],
     datasets: [
       {
         data: [34, 27, 17, 15, 4, 3],
         backgroundColor: [
-          "rgba(239, 85, 85, 0.5)",
-          "rgba(239, 85, 239, 0.5)",
-          "rgba(85, 85, 239, 0.5)",
-          "rgba(85, 239, 85, 0.5)",
-          "rgba(239, 239, 85, 0.5)",
-          "rgba(85, 239, 239, 0.5)"
+          "rgba(85, 239, 213, 0.5)",
+          "rgba(85, 239, 239, 0.5)",
+          "rgba(85, 167, 239, 0.5)",
+          "rgba(85, 95, 239, 0.5)",
+          "rgba(136, 85, 239, 0.5)",
+          "rgba(198, 85, 239, 0.5)"
         ],
         borderWidth: 0
       }
@@ -214,7 +212,7 @@ let graphique1 = new Chart(document.getElementById("b"), {
     plugins: {
       title: {
         display: true,
-        text: "Electronic Dance/EDM — répartition par âge (%)"
+        text: "Biosphère de la planète Astra-9"
       }
     },
     scales: {
@@ -230,6 +228,7 @@ let graphique1 = new Chart(document.getElementById("b"), {
   }
 });
 
+// Animation du graphique 2
 setInterval(() => {
    for (let ds of graphique1.data.datasets) {
      for (let i = 0; i < ds.data.length; i++) {
