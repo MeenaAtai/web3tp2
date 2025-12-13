@@ -175,11 +175,6 @@ svg {
     box-shadow: 0 0 20px #00FFFF inset;
 }
 
-.table tbody tr:hover {
-    background: rgba(0, 255, 136, 0.1);
-    transform: scale(1.01);
-}
-
 th td {
     font-family: "CaviarDreams";
 }
