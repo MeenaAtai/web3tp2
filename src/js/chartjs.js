@@ -103,13 +103,13 @@ let graphique = new Chart(document.getElementById("a").getContext("2d"), {
 
         // Grille
         grid: {
-          color: "rgba(222, 222, 222, 0.2)", // Couleur des lignes
+          color: "#00FFFF", // Couleur des lignes
           lineWidth: 1 // Largeur des lignes
         },
 
         // Bordure de l’axe
         border: {
-          color: "rgba(222, 222, 222, 0.2)",
+          color: "#00FFFF",
           width: 2,
           dash: [0, 0] // Lignes à l'intérieur
         },
@@ -145,7 +145,7 @@ let graphique = new Chart(document.getElementById("a").getContext("2d"), {
         },
 
         grid: {
-          color: "rgba(222, 222, 222, 0.2)",
+          color: "#00FFFF",
           lineWidth: 1
         },
 
@@ -162,7 +162,7 @@ let graphique = new Chart(document.getElementById("a").getContext("2d"), {
         },
 
         border: {
-          color: "rgba(222, 222, 222, 0.2)",
+          color: "#00FFFF",
           width: 2,
           dash: [0, 0] // Lignes à l'intérieur
         }
@@ -217,9 +217,9 @@ let graphique1 = new Chart(document.getElementById("b"), {
     },
     scales: {
       r: {
-        grid: { color: "rgba(222,222,222,0.1)" },
+        grid: { color: "#00FFFF" },
         angleLines: {
-          color: "rgba(222,222,222,0.1)"
+          color: "#00FFFF"
         },
         beginAtZero: true,
         ticks: { stepSize: 10, showLabelBackdrop: false }
