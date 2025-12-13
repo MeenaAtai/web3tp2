@@ -1,11 +1,11 @@
 @font-face {
     font-family: "CaviarDreams";
-    src: local("CaviarDreams") url("CaviarDreams.ttf") format("truetype");
+    src: url("../assets/font/CaviarDreams.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "BabaPro";
-    src: local("BabaPro"), url("BabaPro-Regular.ttf") format("truetype");
+    src: url('../assets/font/BabaPro-Regular.ttf') format("truetype");
 }
 
 body {
@@ -17,14 +17,14 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* ====== GRILLE DU HEADER ====== */
+
 header {
     display: grid;
     grid-template-areas:
         "animL animM animR"
         "info  info  info";
     grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: 120px;
+    grid-auto-rows: auto; /* <- changer ici */
     gap: 10px;
     padding: 10px;
 }
@@ -39,14 +39,20 @@ header {
 /* Bordures différentes */
 .anim-left  { border: 3px solid #00b4ff; }
 .anim-mid   { border: 3px solid #00e0a5; }
-.anim-right { border: 3px solid #ffbb00; }
-.info-bar   { border: 3px solid #ff4d6d; }
+.anim-right { border: 3px solid #00b4ff; }
+.info-bar   { border: 3px solid #6d5dff; }
+
+.anim-mid {
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;     /* centre verticalement */
+    gap: 16px;               
+}
 
 .zone {
     background: rgba(255,255,255,0.05);
 }
 
-/* ====== ZONE CENTRALE ====== */
 main {
     display: grid;
     grid-template-areas:
@@ -56,8 +62,8 @@ main {
     padding: 10px;
 }
 
-.vfx-left  { grid-area: vfxL;  border: 3px solid #6d5dff; }
-.vfx-right { grid-area: vfxR;  border: 3px solid #ff6ee0; }
+.vfx-left  { grid-area: vfxL;  border: 3px solid #631eb2; }
+.vfx-right { grid-area: vfxR;  border: 3px solid #631eb2; }
 
 .center-zone {
     grid-area: center;
@@ -75,7 +81,6 @@ main {
     height: 100%;
 }
 
-/* ====== BAS : GRAPHIQUES ====== */
 footer {
     display: grid;
     grid-template-areas: "graphA graphB";
@@ -84,8 +89,8 @@ footer {
     padding: 10px;
 }
 
-.graph-a { grid-area: graphA; border: 3px solid #3c0a98; }
-.graph-b { grid-area: graphB; border: 3px solid #6f1293; }
+.graph-a { grid-area: graphA; border: 3px solid #00b4ff; }
+.graph-b { grid-area: graphB; border: 3px solid #00b4ff; }
 
 .chart-container {
     background: rgba(255,255,255,0.05);
@@ -100,10 +105,22 @@ canvas {
 .visualizer {
     position: absolute;
     width: 100%;
-    height: 50%; 
+    height: 45%; 
+    
+}
+
+p {
     font-family: "CaviarDreams";
     font-size: 25px;
     color: white;
+    margin: 1px;
+}
+
+h1 {
+    font-family: "BabaPro", sans-serif;
+    color: white;
+    margin: 5px;
+    text-align: center;
 }
 
 .anim-right {
@@ -144,5 +161,13 @@ canvas {
 }
 
 .zdog-canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-90%, -85%) scale(0.2);
     z-index: -1;
+}
+
+svg {
+    color: turquoise;
 }
